@@ -32,6 +32,10 @@ Route::post('/admin/addproj',[AdminController::class,'addproj'])->name('admin.ad
 Route::post('/admin/assignproj',[AdminController::class,'assignProj'])->name('admin.assignproj')->middleware('admincheck');
 Route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logout')->middleware('admincheck');
 Route::get('/emp/logout',[EmpController::class,'logout'])->name('emp.logout')->middleware('empcheck');
+Route::get('/admin/{emp}/{prj}/task',[AdminController::class,'addtaskForm'])->name('admin.addtask')->middleware('admincheck');
+Route::get('/admin/{emp}/{prj}/taskshow',[AdminController::class,'showtask'])->name('admin.showtask')->middleware('admincheck');
+Route::post('/admin/{emp}/addtask',[AdminController::class,'addtask'])->name('admin.posttask')->middleware('admincheck');
+
 
 
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Project;
 use App\Models\User;
+use App\Models\Task;
 
 class AdminController extends Controller
 {
@@ -86,5 +87,28 @@ class AdminController extends Controller
             $request->session()->pull('admin');
             return redirect()->route('admin.login');
         }
+    }
+    public function addtaskForm($emp, $prj){
+        $employee = User::find($emp);
+        $project = Project::find($prj);
+        $id = session()->get('admin');
+        $admin = Admin::find($id);
+        return view('admin.addtaskform',compact('employee','project','admin'));
+    }
+    public function addtask(Request $request,$emp){
+        $request->validate([
+            'name'=>'required',
+        ]);
+        $task = Task::create($request->all());
+        return redirect()->route('admin.showempinfo',['id'=>$emp]);
+
+    }
+    public function showtask($emp,$prj){
+        $employee = User::find($emp);
+        $project = Project::find($prj);
+        $id = session()->get('admin');
+        $admin = Admin::find($id);
+        $tasks = Task::where('user_id',$employee->id)->where('project_id',$project->id)->get();
+        return view('admin.showtasks',compact('employee','project','admin','tasks'));
     }
 }

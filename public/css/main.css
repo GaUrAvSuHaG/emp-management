@@ -199,8 +199,18 @@ input[type="submit"] {
 .list-data-name p {
     font-size: 20px;
 }
+.add-task{
+    width:400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.add-task p{
+    margin-right: 70px;
+}
 
-.list-data-name a {
+.list-data-name a, .add-task a {
     cursor: pointer;
     outline: none;
     border: none;
@@ -281,4 +291,25 @@ input[type="submit"] {
 .my-projects a:hover::after{
     left: 115px;
     color: black;
+}
+.form-container h2{
+    font-size: 30px;
+    margin: 20px 0;
+}
+.show-tasks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.show-tasks h2{
+    margin:20px 0;
+}
+.tasks{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.tasks p{
+    margin: 20px 30px;
 }

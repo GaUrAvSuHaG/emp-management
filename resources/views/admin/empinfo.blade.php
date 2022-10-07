@@ -7,7 +7,11 @@
             <div class="proj-list">
                 @if ($emp->projects->count() > 0)
                     @foreach ($emp->projects as $p)
+                    <div class="add-task">
                         <p>{{ $p->name }}</p>
+                        <a href="{{ route('admin.addtask',['emp'=>$emp->id,'prj'=>$p->id]) }}">Add Task</a>
+                        <a href="{{ route('admin.showtask',['emp'=>$emp->id,'prj'=>$p->id]) }}">View Task</a>
+                    </div>
                     @endforeach
                 @else
                     <p>No Projects Assigned</p>
