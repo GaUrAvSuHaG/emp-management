@@ -1,0 +1,284 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 15px 10px;
+    color: white;
+}
+
+.nav-banner {
+    margin-left: 15px;
+}
+
+.nav-banner p {
+    text-transform: uppercase;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-banner p::before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 25px;
+    transition: all 0.3s ease-out;
+}
+
+.nav-banner p:hover::before {
+    width: 290px;
+}
+
+.nav-links {
+    margin-right: 15px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0px 22px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-link::before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 25px;
+    transition: all 0.3s ease-out;
+
+}
+
+.nav-link:hover::before {
+    width: 140px;
+}
+
+.main-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 300px;
+    height: 100%;
+    transition: all 0.4s ease-out;
+}
+
+.main-banner h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.main-banner:hover {
+    letter-spacing: 5px;
+    transform: skew(-15deg);
+}
+
+.main-banner h3 {
+    font-size: 25px;
+
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border: 2px solid #777;
+    margin: 30px 50px 0 50px;
+    border-radius: 30px;
+}
+
+.form-field {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form-field p {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.form-field input {
+    font-size: 20px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #777;
+    display: inline-block;
+    width: 250px;
+}
+
+.form-heading p {
+    font-size: 26px;
+    text-transform: uppercase;
+    text-align: center;
+    transform: skew(-10deg);
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+.errorp {
+    color: red;
+    margin-left: 20px;
+}
+
+.list-data-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.list-data-container h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.list-data-fields {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.list-data-name {
+    width: 25%;
+    margin: 0 10px;
+
+}
+
+.list-data-name p {
+    font-size: 20px;
+}
+
+.list-data-name a {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    color: #777;
+    position: relative;
+
+}
+.list-data-name a::after {
+    content: ">>";
+    color: #777;
+    position: absolute;
+    left: 85px;
+    transition: all 0.3s ease-out;
+}
+.list-data-name a:hover::after{
+    left: 105px;
+    color: black;
+}
+
+.emp-info-div h2{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+.proj-list{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.proj-list p{
+    margin: 10px 0;
+}
+.my-projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.my-projects p{
+    margin: 20px 0;
+    font-size: 20px;
+}
+.my-projects h2{
+    font-size: 30px;
+    text-transform: uppercase;
+
+}
+.my-projects a{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    color: #777;
+    text-align: center;
+    position: relative;
+
+}
+.my-projects a::after{
+    content: ">>";
+    color: #777;
+    position: absolute;
+    left: 100px;
+    transition: all 0.3s ease-out;
+}
+.my-projects a:hover::after{
+    left: 115px;
+    color: black;
+}
