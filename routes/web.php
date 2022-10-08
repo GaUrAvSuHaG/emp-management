@@ -35,6 +35,8 @@ Route::get('/emp/logout',[EmpController::class,'logout'])->name('emp.logout')->m
 Route::get('/admin/{emp}/{prj}/task',[AdminController::class,'addtaskForm'])->name('admin.addtask')->middleware('admincheck');
 Route::get('/admin/{emp}/{prj}/taskshow',[AdminController::class,'showtask'])->name('admin.showtask')->middleware('admincheck');
 Route::post('/admin/{emp}/addtask',[AdminController::class,'addtask'])->name('admin.posttask')->middleware('admincheck');
+Route::get('/emp/projects/{id}',[EmpController::class,'projinfo'])->name('emp.projinfo')->middleware('empcheck');
+Route::get('/emp/tasks/update',[EmpController::class,'updatestatus'])->name('emp.updatestatus')->middleware('empcheck');
 
 
 

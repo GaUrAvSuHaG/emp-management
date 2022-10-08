@@ -5,7 +5,7 @@
     @if($user->projects->count() > 0)
     @foreach ($user->projects as $p)
         <p>{{$p->name }}</p>
-        <a href="">Details</a>
+        <a href="{{ route('emp.projinfo',['id'=>$p->id]) }}">Details</a>
     @endforeach
     @else
     <p>No Projects Assigned</p>

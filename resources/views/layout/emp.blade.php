@@ -14,7 +14,7 @@
         <div class="nav-banner">
             @if(Session::has('emp'))
 
-            <p>Hello, {{ App\Models\User::find(Session::get('emp'))->name }}</p>
+            <p><a href="{{ route('emp.home') }}">Hello, {{ App\Models\User::find(Session::get('emp'))->name }}</a></p>
             @endif
         </div>
         <div class="nav-links">

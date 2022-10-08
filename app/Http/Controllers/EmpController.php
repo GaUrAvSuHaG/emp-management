@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Task;
 class EmpController extends Controller
 {
     public function index(){
@@ -42,5 +43,18 @@ class EmpController extends Controller
             return redirect()->route('emp.login');
         }
     }
+    public function projinfo($id){
+        $empid = session()->get('emp');
+        $pid = $id;
+        $tasks = Task::where('project_id',$pid)->where('user_id',$empid)->get();
+        return view('emp.projinfo',compact('tasks', 'pid', 'empid'));
+    }
+    public function updatestatus(Request $request){
+        $task = Task::find($request->id);
+        $task->status = $request->status;
+        $task->save();
+        return redirect()->back();
 
+
+    }
 }
